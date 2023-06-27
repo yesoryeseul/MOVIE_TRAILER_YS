@@ -26,10 +26,9 @@ const Popular = () => {
 export default Popular;
 
 const GridCotainer = styled.div`
-	/* display: grid;
+	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	grid-gap: 20px; */
-	display: flex;
+	grid-gap: 20px;
 `;
 
 const S = {

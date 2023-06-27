@@ -3,23 +3,28 @@ import { TbMovie } from "react-icons/tb";
 import { RiMovie2Line } from "react-icons/ri";
 import { AiOutlineTrophy } from "react-icons/ai";
 import { flexAlignCenter } from "styles/common";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+	const navigate = useNavigate();
+	const onNavigate = endpoint => {
+		navigate(`/${endpoint}`);
+	};
 	return (
 		<S.Container>
 			<S.Nav>
-				<S.Logo>What's Movie?</S.Logo>
+				<S.Logo onClick={() => onNavigate("")}>What's Movie?</S.Logo>
 				<section>
 					<S.Ul>
-						<li>
+						<li onClick={() => onNavigate("nowplaying")}>
 							<TbMovie size={18} />
 							Now Playing
 						</li>
-						<li>
+						<li onClick={() => onNavigate("upcoming")}>
 							<RiMovie2Line size={18} />
 							Upcoming
 						</li>
-						<li>
+						<li onClick={() => onNavigate("top-rated")}>
 							<AiOutlineTrophy size={18} />
 							Top Rank
 						</li>
@@ -48,6 +53,7 @@ const Logo = styled.li`
 	font-size: 28px;
 	padding: 0 10px;
 	color: #ff0558;
+	cursor: pointer;
 `;
 
 const Ul = styled.ul`

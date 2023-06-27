@@ -1,17 +1,13 @@
 import styled from "styled-components";
-import Popular from "./components/Popular";
-
-const Main = () => {
+const Upcoming = () => {
 	return (
 		<S.Container>
-			<S.Title>홈</S.Title>
-			{/* 슬라이드 배너 돌리기 */}
-			<Popular />
+			<S.Title>상영 예정작</S.Title>
 		</S.Container>
 	);
 };
 
-export default Main;
+export default Upcoming;
 
 const Container = styled.div`
 	padding: 3rem 40px;
