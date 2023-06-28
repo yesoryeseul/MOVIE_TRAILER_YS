@@ -41,6 +41,7 @@ const Container = styled.div`
 `;
 
 const Nav = styled.nav`
+	z-index: 600;
 	position: fixed;
 	padding: 24px 16px 16px 16px;
 	height: 100vh;

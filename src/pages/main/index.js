@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import Popular from "./components/Popular";
 
 const Main = () => {
 	return (
 		<S.Container>
 			<S.Title>홈</S.Title>
 			{/* 슬라이드 배너 돌리기 */}
-			<Popular />
+			{/* <Popular /> */}
 		</S.Container>
 	);
 };

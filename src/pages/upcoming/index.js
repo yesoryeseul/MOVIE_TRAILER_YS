@@ -1,24 +1,7 @@
-import styled from "styled-components";
+import MovieInfinity from "components/infinityScroll";
+
 const Upcoming = () => {
-	return (
-		<S.Container>
-			<S.Title>상영 예정작</S.Title>
-		</S.Container>
-	);
+	return <MovieInfinity endpoint="upcoming" title="개봉 예정작" />;
 };
 
 export default Upcoming;
-
-const Container = styled.div`
-	padding: 3rem 40px;
-`;
-
-const Title = styled.p`
-	font-size: 24px;
-	font-weight: bold;
-`;
-
-const S = {
-	Container,
-	Title,
-};

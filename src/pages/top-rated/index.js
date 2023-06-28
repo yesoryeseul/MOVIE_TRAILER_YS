@@ -1,24 +1,6 @@
-import styled from "styled-components";
+import MovieInfinity from "components/infinityScroll";
 const TopRated = () => {
-	return (
-		<S.Container>
-			<S.Title>영화 랭킹순</S.Title>
-		</S.Container>
-	);
+	return <MovieInfinity endpoint="top_rated" title="상위 랭킹순" />;
 };
 
 export default TopRated;
-
-const Container = styled.div`
-	padding: 3rem 40px;
-`;
-
-const Title = styled.p`
-	font-size: 24px;
-	font-weight: bold;
-`;
-
-const S = {
-	Container,
-	Title,
-};

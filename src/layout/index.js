@@ -9,11 +9,13 @@ const Layout = () => {
 	return (
 		<S.Container>
 			<NavBar />
-			<Header />
-			<S.MainFooter>
+			<S.OutletWrapper>
+				<Header />
+				{/* <S.MainFooter> */}
 				<Outlet />
 				<Footer />
-			</S.MainFooter>
+			</S.OutletWrapper>
+			{/* </S.MainFooter> */}
 		</S.Container>
 	);
 };
@@ -21,15 +23,22 @@ const Layout = () => {
 export default Layout;
 
 const Container = styled.div`
-	display: flex;
+	/* display: flex;
+	justify-content: space-between; */
 `;
 const MainFooter = styled.div`
-	width: 75%;
+	/* width: 75%;
 	margin-top: 54px;
-	${flexColumn}
+	${flexColumn} */
+`;
+
+const OutletWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
 `;
 
 const S = {
 	Container,
 	MainFooter,
+	OutletWrapper,
 };

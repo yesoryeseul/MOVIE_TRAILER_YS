@@ -9,3 +9,8 @@ export const flexColumn = css`
 	display: flex;
 	flex-direction: column;
 `;
+
+export const flexalignItemCenter = css`
+	display: flex;
+	align-items: center;
+`;

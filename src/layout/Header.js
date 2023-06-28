@@ -18,7 +18,7 @@ const Container = styled.div`
 	left: 0;
 	z-index: 500;
 	width: 100%;
-	margin-left: 254px;
+	padding-left: 254px;
 `;
 
 const Headers = styled.div`
