@@ -1,11 +1,22 @@
 import styled from "styled-components";
+import Popular from "./components/Popular";
+import Responsive from "./components/Popular-slide";
+import { useState } from "react";
 
 const Main = () => {
+	const [changeLanguage, setChangeLanguage] = useState("Ko-KR");
+
+	const onChangeLanguage = e => {
+		setChangeLanguage(e.target.value);
+	};
 	return (
 		<S.Container>
-			<S.Title>홈</S.Title>
 			{/* 슬라이드 배너 돌리기 */}
-			{/* <Popular /> */}
+			<Popular
+				changeLanguage={changeLanguage}
+				onChangeLanguage={onChangeLanguage}
+			/>
+			<Responsive />
 		</S.Container>
 	);
 };
@@ -13,15 +24,11 @@ const Main = () => {
 export default Main;
 
 const Container = styled.div`
-	padding: 3rem 40px;
-`;
-
-const Title = styled.p`
-	font-size: 24px;
-	font-weight: bold;
+	margin: 80px 0 0 120px;
+	width: 100%;
+	/* padding: 3rem 40px; */
 `;
 
 const S = {
 	Container,
-	Title,
 };

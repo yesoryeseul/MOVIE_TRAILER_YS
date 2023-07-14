@@ -10,6 +10,7 @@ const NavBar = () => {
 	const onNavigate = endpoint => {
 		navigate(`/${endpoint}`);
 	};
+
 	return (
 		<S.Container>
 			<S.Nav>

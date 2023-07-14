@@ -3,9 +3,9 @@ import { MovieApi } from "apis/MovieApi";
 import { QUERYKEY } from "consts/querykey";
 
 export const useGetMovies = {
-	ListMovie: endpoint => {
-		return useQuery([QUERYKEY.MOVIE_LIST], () =>
-			MovieApi.getMovieList(endpoint),
+	ListMovie: (endpoint, params, language) => {
+		return useQuery([QUERYKEY.MOVIE_LIST, language], () =>
+			MovieApi.getMovieList(endpoint, params, language),
 		);
 	},
 };

@@ -14,7 +14,7 @@ export const useInfiniteScrollQuery = endpoint => {
 	} = useInfiniteQuery(
 		[QUERYKEY.MOVIE_LIST],
 		({ pageParam = 1 }) =>
-			MovieApi.getMovieList(endpoint, {
+			MovieApi.getInfinityMovieList(endpoint, {
 				page: pageParam,
 			}),
 		{

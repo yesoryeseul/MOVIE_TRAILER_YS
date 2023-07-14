@@ -25,39 +25,10 @@ const OneMovie = ({ movie }) => {
 
 export default OneMovie;
 
-// const Title = styled.p`
-// 	font-size: 15px;
-// 	word-break: keep-all;
-// 	line-height: 1.2rem;
-// 	font-weight: 500;
-// 	width: 200px;
-// 	color: #1c1d1f;
-// 	margin-top: 6px;
-// `;
-
 const Img = styled.img`
 	border-radius: 4px;
 `;
 
-// const VoteLine = styled.p`
-// 	font-size: 13px;
-// 	margin-top: 6px;
-// 	${flexalignItemCenter}
-
-// 	& svg {
-// 		color: #fcd53f;
-// 		margin-right: 2px;
-// 	}
-// `;
-
-// const FlexWrapper = styled.div`
-// 	display: flex;
-// 	margin-bottom: 20px;
-// `;
-
 const S = {
-	// Title,
 	Img,
-	// VoteLine,
-	// FlexWrapper,
 };

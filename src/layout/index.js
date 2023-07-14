@@ -11,11 +11,9 @@ const Layout = () => {
 			<NavBar />
 			<S.OutletWrapper>
 				<Header />
-				{/* <S.MainFooter> */}
 				<Outlet />
 				<Footer />
 			</S.OutletWrapper>
-			{/* </S.MainFooter> */}
 		</S.Container>
 	);
 };
