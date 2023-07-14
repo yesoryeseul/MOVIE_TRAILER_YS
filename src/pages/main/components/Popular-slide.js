@@ -15,8 +15,8 @@ const NextArrow = ({ style, onClick }) => {
 				display: "block",
 				position: "absolute",
 				zIndex: "1",
-				marginTop: "-125px",
-				marginLeft: "1050px",
+				top: "116px",
+				right: "0",
 			}}
 			onClick={onClick}
 		>
@@ -33,9 +33,9 @@ const PrevArrow = ({ style, onClick }) => {
 				width: "30px",
 				height: "30px",
 				display: "block",
+				position: "absolute",
 				zIndex: "1",
-				marginTop: "120px",
-				marginLeft: "-30px",
+				top: "116px",
 			}}
 			onClick={onClick}
 		>
@@ -44,78 +44,69 @@ const PrevArrow = ({ style, onClick }) => {
 	);
 };
 
-const Responsive = () => {
-	let popularMovie;
-	const getPopularMovie = useGetMovies.ListMovie("popular");
+const PopularSlide = () => {
+	let upcomingMovie;
+	const getUpcomingMovie = useGetMovies.ListMovie("upcoming");
 
-	if (!getPopularMovie.data) popularMovie = [];
+	if (!getUpcomingMovie.data) upcomingMovie = [];
 	else {
-		popularMovie = getPopularMovie.data.data.results;
+		upcomingMovie = getUpcomingMovie.data.data.results;
 	}
-	console.log("popularMovie", popularMovie);
+	console.log("upcomingMovie", upcomingMovie);
 	const imgUrl = "https://image.tmdb.org/t/p/w200";
-	const mock = [
-		{ number: "1" },
-		{ number: "2" },
-		{ number: "3" },
-		{ number: "4" },
-		{ number: "5" },
-		{ number: "6" },
-		{ number: "7" },
-		{ number: "8" },
-	];
 
 	const settings = {
 		dots: true,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 3,
+		speed: 700,
+		slidesToShow: 5,
 		slidesToScroll: 3,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
 	};
 
 	return (
-		<Slider {...settings}>
-			{/* {mock.map(num => (
-				<div style={{ backgroundColor: "gray" }}>
-					<h3
-						style={{
-							backgroundColor: "gray",
-							width: "100%",
-							height: "200px",
-						}}
-					>
-						{num.number}
-					</h3>
-				</div>
-			))} */}
-			{popularMovie.map(movie => (
-				<div>
-					{movie.poster_path ? (
-						<S.Img src={`${imgUrl}${movie.poster_path}`} />
-					) : (
-						<p>no image</p>
-					)}
-					<p style={{ width: "200px" }}>{movie.title}</p>
+		<S.SlideContainer>
+			<h3>상영 기대작 Top 20</h3>
+			<Sliders {...settings}>
+				{upcomingMovie.map(movie => (
 					<div>
-						평점
-						<span>
-							<AiFillStar size={16} color={"rgb(252, 213, 63)"} />
-							{(movie.vote_average / 2).toFixed(1)}
-						</span>
+						{movie.poster_path ? (
+							<S.Img src={`${imgUrl}${movie.poster_path}`} />
+						) : (
+							<p>no image</p>
+						)}
+						<p style={{ width: "200px" }}>{movie.title}</p>
+						<div>
+							평점
+							<span>
+								<AiFillStar size={16} color={"rgb(252, 213, 63)"} />
+								{(movie.vote_average / 2).toFixed(1)}
+							</span>
+						</div>
 					</div>
-				</div>
-			))}
-		</Slider>
+				))}
+			</Sliders>
+		</S.SlideContainer>
 	);
 };
-export default Responsive;
+export default PopularSlide;
+
+const SlideContainer = styled.div`
+	width: 1080px;
+	margin: 0 auto;
+	margin-top: 100px;
+`;
+const Sliders = styled(Slider)`
+	margin-top: 20px;
+`;
 
 const Img = styled.img`
 	border-radius: 4px;
 `;
 
 const S = {
+	SlideContainer,
+	Sliders,
 	Img,
 };
